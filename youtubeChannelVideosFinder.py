@@ -325,7 +325,9 @@ def main():
             date_string = now.strftime('%Y-%m-%d')
 
             #delete all existing files in folder before creating items.
-            dir = '_posts'
+            dir = args.outputFilePath + '/_posts'
+            if not os.path.exists(dir):
+                os.makedirs(dir)
             for f in os.listdir(dir):
                 os.remove(os.path.join(dir, f))
 
@@ -348,9 +350,9 @@ def main():
 
                 count = count + 1
                 try:
-                    if not os.path.exists(args.outputFilePath + '/_posts'):
-                        os.makedirs(args.outputFilePath + '/_posts')
-                    f = open(args.outputFilePath + '/_posts/' + date + '-video' + str(count) + '.md', 'w')       
+                    if not os.path.exists(dir):
+                        os.makedirs(dir)
+                    f = open(dir + '/' + date + '-video' + str(count) + '.md', 'w')       
                 except Exception as err:
                     log.critical('Could not create/open the output file!', exc_info=True)  
                     raise Exception('Impossible to write the links to the output file. Verify that the path is correct and that it is accessible/can be created/can be written to')                    

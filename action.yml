@@ -1,0 +1,37 @@
+    name: YouTube-Videos-As-Posts
+        
+    on: 
+      schedule:
+        - cron: "0 0 * * *" #runs at 00:00 UTC everyday
+          
+    inputs:
+      channelName:
+        description: 'Name of Channel'
+        required: true
+      GoogleApiKey:
+        description: 'Google Api Key'
+        required: true
+        
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+    
+        steps:
+          - name: checkout repo content
+            uses: actions/checkout@v2 # checkout the repository content to github runner.
+          - name: setup python
+            uses: actions/setup-python@v2
+            with:
+              python-version: 3.8 #install the python needed
+          - name: execute py script # run the run.py to get the latest data
+            run: |
+              python ./youtubeChannelVideosFinder.py -k inputs.channelName -c inputs.GoogleApiKey --output-file-path index.md -i 700
+              
+              
+          - name: Commit and push update
+            run: |-
+              git config --global user.email "lkgforit@gmail.com"
+              git config --global user.name "YoutubeAsPostsAction"
+              git add -A
+              git commit -m "Updated Youtube channel videos as posts from GitHub Actions"
+              git push

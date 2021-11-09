@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{e175b094-bcf3-4392-a746-36cde023f704}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>youtubeChannelVideosFinder.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <CommandLineArguments>-k AIzaSyD6orfi3-TWxfMlWHWs-LGFmba_iUg9Rbo -c UCDLfIVSX9tnV_c50dwbBUSw --output-file-path 'C:\Users\sansubr\source\lkginIt\YoutubeChannelWebsite\_posts\2021-10-26-video.md' -i 700</CommandLineArguments>
+    <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
+    <IsWindowsApplication>False</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="index.html" />
+    <Content Include="video-embed.css" />
+    <Content Include="_includes\20detikPlayer.html" />
+    <Content Include="_includes\dailymotionPlayer.html" />
+    <Content Include="_includes\facebookPlayer.html" />
+    <Content Include="_includes\googleDrivePlayer.html" />
+    <Content Include="_includes\linetodayPlayer.html" />
+    <Content Include="_includes\streamablePlayer.html" />
+    <Content Include="_includes\twitchPlayer.html" />
+    <Content Include="_includes\vidioPlayer.html" />
+    <Content Include="_includes\vimeoPlayer.html" />
+    <Content Include="_includes\youtubePlayer.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="rfc3339.py" />
+    <Compile Include="youtubeChannelVideosFinder.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_includes" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

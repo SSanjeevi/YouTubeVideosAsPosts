@@ -1,4 +1,7 @@
     name: YouTube-Videos-As-Posts
+    description: Publish YouTube Videos As Posts in Website automatically
+    icon: cast
+    color: green
         
     on: 
       schedule:

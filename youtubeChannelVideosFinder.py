@@ -348,6 +348,8 @@ def main():
 
                 count = count + 1
                 try:
+                    if not os.path.exists(args.outputFilePath + '/_posts'):
+                        os.makedirs(args.outputFilePath + '/_posts')
                     f = open(args.outputFilePath + '/_posts/' + date + '-video' + str(count) + '.md', 'w')       
                 except Exception as err:
                     log.critical('Could not create/open the output file!', exc_info=True)  

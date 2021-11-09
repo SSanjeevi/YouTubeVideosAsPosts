@@ -9,7 +9,24 @@ YouTube Videos As Posts
 
 ## How to Reuse this Action Template which creates a personal website for the YouTube videos in my channel hosted in Github Pages using Jekyll and Github Actions for free!
 
-1. Install this Github Action
+1. Copy this Github Action below:
+
+```
+   - name: YouTube-Videos-As-Posts
+     uses: SSanjeevi/YouTubeVideosAsPosts@Release1.0.0
+     with:
+     GoogleApiKey: ${{ secrets.GoogleApiKey }}
+     channelName: 'channel_Name'
+     
+   - name: Commit and push update
+     run: |-
+     git config --global user.email "youremailid@gmail.com"
+     git config --global user.name "yourUserName"
+     git add -A
+     git commit -m "Updated Youtube Video posts from GitHub Actions"
+     git push
+
+``` 
 
 2. Use any Jekyll Theme for the repo
 3. Keep the posts folder empty - this Action will create all the videos as posts in the repository

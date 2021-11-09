@@ -348,7 +348,7 @@ def main():
 
                 count = count + 1
                 try:
-                    f = open(args.outputFilePath + '_posts/' + date + '-video' + str(count) + '.md', 'w')       
+                    f = open(args.outputFilePath + '/_posts/' + date + '-video' + str(count) + '.md', 'w')       
                 except Exception as err:
                     log.critical('Could not create/open the output file!', exc_info=True)  
                     raise Exception('Impossible to write the links to the output file. Verify that the path is correct and that it is accessible/can be created/can be written to')                    

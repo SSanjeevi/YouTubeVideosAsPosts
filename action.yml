@@ -18,7 +18,11 @@
         description: 'Google Api Key'
         required: true
         
+
     runs:
-      using: 'python'
-      main: './youtubeChannelVideosFinder.py -k inputs.channelName -c inputs.GoogleApiKey --output-file-path index.md -i 700'
-  
+      using: "composite"
+      steps:
+        - run: python -m pip install PyGithub  # Installing dependencies
+          shell: bash
+        - run: python ${{ github.action_path }}/youtubeChannelVideosFinder.py -k ${{ inputs.GoogleApiKey }} -c ${{ inputs.channelName }} --output-file-path ${{ github.workspace }} -i 700
+          shell: bash

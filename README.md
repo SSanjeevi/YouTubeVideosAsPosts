@@ -45,7 +45,7 @@ https://tv.lkgforit.com/
 https://tnpsc.lkgforit.com
 
 ## Detailed Article:
-[Step by Step Tutorial](https://lkgforit.com/personal-youtube-channel-videos-website-hosted-in-github-pages-for-free-which-populates-content-by-itself)
+[Step by Step Tutorial](https://lkgforit.com/personal-youtube-channel-videos-website-hosted-in-github-pages-for-free-which-populates-content-automatically)
 
 
 Reference:
